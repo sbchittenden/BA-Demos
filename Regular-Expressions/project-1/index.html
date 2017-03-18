@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Link Harvester</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link rel="stylesheet" href="project-1.css">
+</head>
+
+<body>
+  <section class="harvester__container">
+    <h1>Link Harvester</h1>
+    <textarea name="harvester" id="harvesterTxtArea" cols="100" rows="10" class="harvester__textarea" placeholder="Paste text or HTML here"></textarea>
+    <input type="file" id="file" class="file-upload__input">
+    <label for="file" class="file-upload__label"><i class="material-icons">file_upload</i> <span>Upload a file (.txt or .html)</span></label>
+    <div class="harvester__button-container">	
+    <a class="btn--active" id="go">Get me the links!</a>
+    <a class="btn--hidden" id="reset">Reset and try again.</a>
+    </div>
+    <div class="harvester__results-container">
+      <h2 class="harvester__list-header">Harvested Links</h2>
+      <ol class="harvester__links-list"></ol>
+			<h2 class="harvester__list-header">Harvested Email Addresses</h2>
+			<ol class="harvester__email-list"></ol>
+    </div>
+  </section>
+  <script src="harvester.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

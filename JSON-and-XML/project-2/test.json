@@ -1,0 +1,9 @@
+{
+  "country": "United States",
+  "capital": "Washington, DC",
+  "anArray": ["thingOne","thingTwo","thingThree"],
+  "anObject": {"property": "value","number": 23,"boolean": true},
+  "true": true,
+  "false": false,
+  "number": 40
+}

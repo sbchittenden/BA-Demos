@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JSON Validator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Fira+Mono" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link rel="stylesheet" href="project-2.css">
+</head>
+
+<body>
+  <section class="validator__container">
+    <h1>JSON Validator</h1>
+    <textarea name="validator" id="validatorTxtArea" cols="100" rows="10" class="validator__textarea" placeholder="Type or paste JSON here or upload below"></textarea>
+    <input type="file" id="file" class="file-upload__input" accept=".json, application/json">
+    <label for="file" class="file-upload__label"><i class="material-icons">file_upload</i> <span>Upload .json file</span></label>
+    <div class="validator__button-container"> 
+    <a class="btn--active" id="go">Validate!</a>
+    <a class="btn--hidden" id="reset">Reset and try again.</a>
+    </div>
+    <div class="validator__results-container">
+      <h2 class="validator__status">Validator status</h2>
+    </div>
+  </section>
+  <script src="jsonValidator.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
