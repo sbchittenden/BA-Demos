@@ -1,0 +1,32 @@
+body {
+  display: flex;
+  font-family: 'Merriweather';
+  max-width: 80em;
+  margin: 4% auto;
+}
+
+h1 {
+	font-size: 2.6em;
+	margin-top: 0;
+}
+
+main {
+  flex: 1 1 80%;
+  padding: 1em 2em;
+  border-left: solid 1px lightgray;
+}
+
+main p {
+	line-height: 1.4;
+}
+
+aside {
+  flex: 1 1 20%;
+  padding: 1em;
+  font-size: 1.2em;
+  margin-top: 2.6em;
+}
+
+aside p {
+  line-height: 1.5;
+}

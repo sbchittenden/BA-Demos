@@ -1,0 +1,9 @@
+section:first-of-type h2 + .article-content {
+	background-color: skyblue;
+	color: white;
+}
+
+.subheader {
+	color: lightgray;
+	margin-top: 0.2em;
+}

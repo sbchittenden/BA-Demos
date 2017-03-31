@@ -1,0 +1,11 @@
+body {
+	margin: 0 auto;
+	max-width: 45em;
+	background-color: rgb(80,80,80);
+}
+
+.article-content {
+	background-color: magenta;
+	color: white;
+}
+
