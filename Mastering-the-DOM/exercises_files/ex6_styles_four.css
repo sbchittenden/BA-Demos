@@ -1,0 +1,13 @@
+.article-content {
+	background-color: magenta;
+	color: white;
+}
+
+p {
+	padding: 1em;
+}
+
+body {
+	font-family: sans-serif;
+	padding-top: 4em;
+}
