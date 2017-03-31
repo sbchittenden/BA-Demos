@@ -1,6 +1,6 @@
 # Mastering the DOM Exercise Files
 
-## [Exercise 1](https://sbchittenden.github.io/BA-Demos/Mastering-the-DOM/exercises_files/exercise_1.html)
+## [Exercise 1](https://sbchittenden.github.io/BA-Demos/Mastering-the-DOM/exercises_files/exercise_1.js)
 
 ## [Exercise 2](https://sbchittenden.github.io/BA-Demos/Mastering-the-DOM/exercises_files/exercise_2.html)
 
