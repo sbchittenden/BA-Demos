@@ -1,2 +1,2 @@
-# Project 2
-### portfolio with scroll
+# portfolio
+Web development portfolio

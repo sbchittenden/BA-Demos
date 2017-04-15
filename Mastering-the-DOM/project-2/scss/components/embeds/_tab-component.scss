@@ -1,0 +1,91 @@
+.tab-component {
+  position: relative;
+  color: rgb(72, 75, 93);
+  & h1 {
+    font-size: 2em;
+    text-shadow: none;
+    font-family: $montserrat;
+    text-align: left;
+  }
+  & p {
+    font-size: 1em;
+    font-family: $montserrat;
+    line-height: 1.2;
+    margin-bottom: 1em;
+    @media screen and (max-width: 548px) {
+      font-size: 1.2em;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 0.75em;
+  }
+  @media screen and (max-width: 548px) {
+    font-size: 0.68em;
+  }
+}
+
+.tab-component__tabs {
+  margin: -4em 0 0 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.tab-label {
+  display: inline-block;
+  margin-right: 0.25em;
+  padding: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.25s;
+  border-bottom: none;
+  color: rgb(250, 250, 250);
+  background-color: rgb(146, 150, 171);
+  border-radius: 3px 3px 0 0;
+  &:hover {
+    background-color: rgb(254, 102, 123);
+  }
+}
+
+.tab-content {
+  display: block;
+  opacity: 0;
+  position: absolute;
+  width: 98%;
+  padding: 1em;
+  margin-top: -1px;
+  background-color: rgb(250, 250, 250);
+  border-radius: 0 3px 3px 3px;
+  @media screen and (max-width: 548px) {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+%tab-label-selected-style {
+  color: rgb(50, 50, 50);
+  background-color: rgb(250, 250, 250);
+  border-top: solid 0.2em rgb(254, 102, 123);
+}
+
+@each $id in home-decor,
+furniture,
+kitchen,
+clearance {
+  ##{$id}:checked ~ .tab-component__tabs .tab-label[for="#{$id}"] {
+    @extend %tab-label-selected-style
+  }
+}
+
+%tab-content-selected-visibility {
+  opacity: 1;
+  z-index: 5;
+}
+
+@each $id,
+$num in (home-decor, 1),
+(furniture, 2),
+(kitchen, 3),
+(clearance, 4) {
+  ##{$id}:checked ~ .tab-component__content .tab-content:nth-of-type(#{$num}) {
+    @extend %tab-content-selected-visibility;
+  }
+}
