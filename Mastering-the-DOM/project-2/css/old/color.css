@@ -92,7 +92,7 @@
   width: 45%;
   float: right;
   padding: 1%;
-  background: repeat url(worn_dots.png);
+  background: repeat url(../img/color-builder/worn_dots.png);
 }
 
 #color-build-form-wrap .range-numbers {
