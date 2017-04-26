@@ -132,7 +132,7 @@ body {
   width: 868px;
   height: 576.5px;
   position: relative;
-  background: url(../img/_unsolved.png);
+  background: url(../img/unsolved.png);
   border-radius: 3px;
   border: $border-light;
   transition: background 0.25s ease;
@@ -140,12 +140,12 @@ body {
 
 .--hinted {
   @extend .jp_puzzle-board;
-  background: url(../img/_solved.png);
+  background: url(../img/solved.png);
 }
 
 .--celebration {
   @extend .jp_puzzle-board;
-  background: url(../img/_celebrate.png);
+  background: url(../img/celebrate.png);
 }
 
 .puzzle-grid-container {
