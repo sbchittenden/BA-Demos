@@ -8,4 +8,4 @@ repo for public demos of BA projects
 [Demo](https://sbchittenden.github.io/BA-Demos/JSON-and-XML/project-2/)
 
 ### Drag-and-drop Puzzle
-[Demo](https://sbchittenden.github.io/JS-Events/puzzle/)
+[Demo](https://sbchittenden.github.io/BA-Demos/JS-Events/puzzle/)
