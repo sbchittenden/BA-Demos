@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Jigsaw Puzzle</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+<div class="jp_top-bar">
+    <div class="jp_reset-button">Reset</div>
+    <div class="jp_puzzle-timer --is-default">
+      <h1><span id="t-minutes">0</span>:<span id="t-seconds">00</span></h1>
+      </div>
+    <div class="jp_hint-button">Hint</div>
+  </div>
+	<div class="jp_initial-modal">
+		<h2>Choose a level of difficulty:</h2>
+		<span class="jp_level-button" data-level="7">Easy</span>
+		<span class="jp_level-button" data-level="4">Medium</span>
+		<span class="jp_level-button" data-level="2">Hard</span>
+		<hr>
+		<div class="jp_start-button">Start</div>
+	</div>
+
+  <div class="jp_puzzle-container">
+    <div class="jp_puzzle-board">
+      <div class="puzzle-grid-container">
+        <div class="grid-column-5-piece">
+          <div class="puzzle-piece-drop-zone" data-drop-position="1">
+            <img src="img/1.png" alt="" class="jp_puzzle-piece" id="1">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="2">
+            <img src="img/2.png" alt="" class="jp_puzzle-piece" id="2">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="3">
+            <img src="img/3.png" alt="" class="jp_puzzle-piece" id="3">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="4">
+            <img src="img/4.png" alt="" class="jp_puzzle-piece" id="4">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="5">
+            <img src="img/5.png" alt="" class="jp_puzzle-piece" id="5">
+          </div>
+        </div>
+        <div class="grid-column-4-piece">
+          <div class="puzzle-piece-drop-zone" data-drop-position="6">
+            <img src="img/6.png" alt="" class="jp_puzzle-piece" id="6">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="7">
+            <img src="img/7.png" alt="" class="jp_puzzle-piece" id="7">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="8">
+            <img src="img/8.png" alt="" class="jp_puzzle-piece" id="8">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="9">
+            <img src="img/9.png" alt="" class="jp_puzzle-piece" id="9">
+          </div>
+        </div>
+        <div class="grid-column-5-piece">
+          <div class="puzzle-piece-drop-zone" data-drop-position="10">
+            <img src="img/10.png" alt="" class="jp_puzzle-piece" id="10">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="11">
+            <img src="img/11.png" alt="" class="jp_puzzle-piece" id="11">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="12">
+            <img src="img/12.png" alt="" class="jp_puzzle-piece" id="12">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="13">
+            <img src="img/13.png" alt="" class="jp_puzzle-piece" id="13">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="14">
+            <img src="img/14.png" alt="" class="jp_puzzle-piece" id="14">
+          </div>
+        </div>
+        <div class="grid-column-4-piece">
+          <div class="puzzle-piece-drop-zone" data-drop-position="15">
+            <img src="img/15.png" alt="" class="jp_puzzle-piece" id="15">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="16">
+            <img src="img/16.png" alt="" class="jp_puzzle-piece" id="16">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="17">
+            <img src="img/17.png" alt="" class="jp_puzzle-piece" id="17">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="18">
+            <img src="img/18.png" alt="" class="jp_puzzle-piece" id="18">
+          </div>
+        </div>
+        <div class="grid-column-5-piece">
+          <div class="puzzle-piece-drop-zone" data-drop-position="19">
+            <img src="img/19.png" alt="" class="jp_puzzle-piece" id="19">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="20">
+            <img src="img/20.png" alt="" class="jp_puzzle-piece" id="20">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="21">
+            <img src="img/21.png" alt="" class="jp_puzzle-piece" id="21">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="22">
+            <img src="img/22.png" alt="" class="jp_puzzle-piece" id="22">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="23">
+            <img src="img/23.png" alt="" class="jp_puzzle-piece" id="23">
+          </div>
+        </div>
+        <div class="grid-column-4-piece">
+          <div class="puzzle-piece-drop-zone" data-drop-position="24">
+            <img src="img/24.png" alt="" class="jp_puzzle-piece" id="24">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="25">
+            <img src="img/25.png" alt="" class="jp_puzzle-piece" id="25">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="26">
+            <img src="img/26.png" alt="" class="jp_puzzle-piece" id="26">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="27">
+            <img src="img/27.png" alt="" class="jp_puzzle-piece" id="27">
+          </div>
+        </div>
+        <div class="grid-column-5-piece">
+          <div class="puzzle-piece-drop-zone" data-drop-position="28">
+            <img src="img/28.png" alt="" class="jp_puzzle-piece" id="28">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="29">
+            <img src="img/29.png" alt="" class="jp_puzzle-piece" id="29">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="30">
+            <img src="img/30.png" alt="" class="jp_puzzle-piece" id="30">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="31">
+            <img src="img/31.png" alt="" class="jp_puzzle-piece" id="31">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="32">
+            <img src="img/32.png" alt="" class="jp_puzzle-piece" id="32">
+          </div>
+        </div>
+        <div class="grid-column-4-piece">
+          <div class="puzzle-piece-drop-zone" data-drop-position="33">
+            <img src="img/33.png" alt="" class="jp_puzzle-piece" id="33">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="34">
+            <img src="img/34.png" alt="" class="jp_puzzle-piece" id="34">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="35">
+            <img src="img/35.png" alt="" class="jp_puzzle-piece" id="35">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="36">
+            <img src="img/36.png" alt="" class="jp_puzzle-piece" id="36">
+          </div>
+        </div>
+        <div class="grid-column-5-piece">
+          <div class="puzzle-piece-drop-zone" data-drop-position="37">
+            <img src="img/37.png" alt="" class="jp_puzzle-piece" id="37">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="38">
+            <img src="img/38.png" alt="" class="jp_puzzle-piece" id="38">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="39">
+            <img src="img/39.png" alt="" class="jp_puzzle-piece" id="39">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="40">
+            <img src="img/40.png" alt="" class="jp_puzzle-piece" id="40">
+          </div>
+          <div class="puzzle-piece-drop-zone" data-drop-position="41">
+            <img src="img/41.png" alt="" class="jp_puzzle-piece" id="41">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="jp_puzzle-tray">
+  </div>
+  <div class="fail-background">
+  	<div class="fail-modal">
+  		<h1>FAIL.</h1>
+  		<div class="jp_try-again-button">Try again?</div>
+  	</div>
+  </div>
+  <script src="js/puzzle.js"></script>
+</body>
+
+</html>

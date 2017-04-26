@@ -1,0 +1,268 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  @include flex(initial, center, column wrap);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans';
+  background-color: $black;
+}
+
+.jp_top-bar {
+  @include flex(space-between, center, row nowrap);
+  width: 100%;
+  max-width: 868px;
+}
+
+.jp_initial-modal {
+  @include flex(space-between, flex-start, row wrap);
+  background-color: $black;
+  border: $border-light;
+  position: fixed;
+  top: 218px;
+  width: 500px;
+  height: 300px;
+  z-index: 100;
+  padding: 2em;
+  border-radius: 3px;
+  color: $white;
+  transform: translateY(0);
+  transition: transform 0.85s cubic-bezier(1, -0.19, 0.07, 1.13);
+  & hr {
+    width: 100%;
+    border: $border-light;
+    border-bottom: transparent;
+  }
+  & h2 {
+    margin: 0 0 0.5em 0;
+    width: 100%;
+    text-align: center;
+  }
+  & .jp_start-button {
+    align-self: center;
+    width: 100%;
+  }
+  &.--hidden {
+    transform: translateY(-200%);
+  }
+}
+
+%button {
+  background-color: transparent;
+  border: $border-light;
+  padding: 1em;
+  border-radius: 3px;
+  min-width: 150px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+  letter-spacing: 2px;
+  cursor: pointer;
+  &:hover {
+    background-color: $highlight;
+  }
+}
+
+.jp_start-button {
+  @extend %button;
+}
+
+.jp_reset-button {
+  @extend %button;
+}
+
+.jp_hint-button {
+  @extend %button;
+  &.--is-disabled {
+    color: rgba(255, 255, 255, 0.25);
+    border: solid 1px rgba(255, 255, 255, 0.25);
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+}
+
+.jp_level-button {
+  @extend %button;
+  min-width: 30%;
+}
+
+.jp_try-again-button {
+  @extend %button;
+  margin-top: -10%;
+  width: 30%;
+  &:hover {
+    background-color: $white;
+    color: $critical;
+  }
+}
+
+.jp_puzzle-timer {
+  letter-spacing: 2px;
+  font-family: 'Archivo Black';
+  font-weight: 400;
+}
+
+.--is-default {
+  color: #bdc3c7;
+}
+
+.--is-safe {
+  color: $safe;
+}
+
+.--is-warning {
+  color: $warning;
+}
+
+.--is-critical {
+  color: $critical;
+}
+
+.jp_puzzle-container {
+  @include flex(center, center, column wrap);
+}
+
+.jp_puzzle-board {
+  @include flex(center, center, row wrap);
+  width: 868px;
+  height: 576.5px;
+  position: relative;
+  background: url(../img/_unsolved.png);
+  border-radius: 3px;
+  border: $border-light;
+  transition: background 0.25s ease;
+}
+
+.--hinted {
+  @extend .jp_puzzle-board;
+  background: url(../img/_solved.png);
+}
+
+.--celebration {
+  @extend .jp_puzzle-board;
+  background: url(../img/_celebrate.png);
+}
+
+.puzzle-grid-container {
+  width: 89%;
+  height: 84%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.grid-column-5-piece {
+  width: 96px;
+  height: 100%;
+  // border: solid 1px orange;
+  margin-left: -12px;
+  &:first-of-type {
+    margin-left: 0;
+  }
+}
+
+.grid-column-4-piece {
+  @include flex (center, center, column nowrap);
+  width: 96px;
+  height: 100%;
+  // border: solid 1px cyan;
+  margin-left: -12px;
+}
+
+.puzzle-piece-drop-zone {
+  @include flex(center, center, initial);
+  width: 100%;
+  height: 20%;
+  // border: solid 1px red;
+  border-radius: 50%;
+}
+
+.jp_puzzle-tray {
+  position: relative;
+  // border: solid 1px red;
+  margin-top: 2em;
+  max-width: 63%;
+  min-width: 868px;
+  height: 200px;
+}
+
+.jp_puzzle-piece {
+  position: absolute;
+  &:hover {
+    cursor: move;
+    filter: brightness(1.25);
+  }
+  &.placed {
+    cursor: default;
+    &:hover {
+      cursor: default;
+      filter: none;
+    }
+  }
+}
+
+.--is-celebrating-x {
+  animation: celebrate-x 1s ease-out 5 alternate;
+}
+
+@keyframes celebrate-x {
+  0% {
+    transform: rotate3d(1, 0, 1, 0deg) translate(-2%, 3%);
+  }
+  50% {
+    transform: rotate3d(1, 0, 1, 360deg) translate(2%, 3%);
+  }
+  50.1% {
+    transform: rotate3d(0, 1, 1, 360deg) translate(2%, 3%);
+  }
+  100% {
+    transform: rotate3d(0, 1, 1, 0deg) translate(-1%, 2%);
+  }
+}
+
+.fail-background {
+  @include flex(center, center, column wrap);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  background-color: transparentize($critical, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+  &.--is-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.fail-modal {
+  @include flex(center, flex-start, row wrap);
+  color: $white;
+  border: $border-light;
+  background-color: $critical;
+  margin-top: -18%;
+  width: 500px;
+  height: 300px;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.2);
+  transition: all 1s ease;
+  & h1 {
+    flex: 1 1 100%;
+    text-align: center;
+    margin-top: 20%;
+  }
+  &.--is-active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+  }
+}
+
