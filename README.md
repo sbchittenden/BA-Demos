@@ -7,5 +7,8 @@ repo for public demos of BA projects
 ### JSON Validator
 [Demo](https://sbchittenden.github.io/BA-Demos/JSON-and-XML/project-2/)
 
+### Smooth Scroll portfolio
+[Demo](https://sbchittenden.github.io/BA-Demos/Mastering-the-DOM/project-2/index.html)
+
 ### Drag-and-drop Puzzle
 [Demo](https://sbchittenden.github.io/BA-Demos/JS-Events/puzzle/)
