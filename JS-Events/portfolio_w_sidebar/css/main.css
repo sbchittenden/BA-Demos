@@ -1631,6 +1631,46 @@ label[for="card-flip"] {
   text-align: right;
   transform: rotateX(180deg); }
 
+.yammy-sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  width: 10em;
+  padding: 1em;
+  border: solid 2px #ebebeb;
+  border-radius: 0 0.3em;
+  position: absolute;
+  right: -1em;
+  background-color: #373B44;
+  transform: translateX(95%);
+  transition: transform 0.4s ease-in-out; }
+  .yammy-sidebar:before {
+    content: "";
+    width: 3em;
+    height: 3em;
+    border-left: solid 2px #ebebeb;
+    border-top: solid 2px #ebebeb;
+    border-bottom: solid 2px #ebebeb;
+    border-radius: 0.3em 0 0 0.3em;
+    background-color: #373B44;
+    position: absolute;
+    left: -3em;
+    top: -0.1em; }
+  .yammy-sidebar:hover {
+    transform: translateX(0); }
+  .yammy-sidebar img {
+    width: 80%;
+    height: auto;
+    margin-top: 0.5em; }
+
+.yam-link {
+  text-align: center;
+  transform: scale(1) rotate(0);
+  transition: transform 0.6s ease; }
+  .yam-link:hover {
+    transform: scale(1.15) rotate(-5deg); }
+
 .clear-float {
   clear: both; }
 
