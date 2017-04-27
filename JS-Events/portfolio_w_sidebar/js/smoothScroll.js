@@ -1,3 +1,4 @@
+(function(){
 var offCanvasNav = document.querySelector('.nav-off-canvas__main-menu');
 var mainNav = document.querySelector('.main-navigation');
 var greetingArrow = document.querySelector('.greeting > a[href="#about"]');
@@ -63,3 +64,5 @@ function scrollUp(offset) {
     }
   }, 1);
 }
+
+})();

@@ -669,6 +669,7 @@ footer > span {
   cursor: pointer;
   pointer-events: none;
   opacity: 0;
+  z-index: 900;
   transform: scale(0.8);
   transition: all 0.25s ease-out; }
   .toTop:hover {
@@ -1663,6 +1664,12 @@ label[for="card-flip"] {
     width: 80%;
     height: auto;
     margin-top: 0.5em; }
+
+.--is-stuck {
+  position: fixed;
+  top: 200px;
+  right: -1em;
+  z-index: 1000; }
 
 .yam-link {
   text-align: center;

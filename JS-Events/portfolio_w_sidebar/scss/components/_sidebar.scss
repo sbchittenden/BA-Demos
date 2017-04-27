@@ -35,6 +35,13 @@
   }
 }
 
+.--is-stuck {
+  position: fixed;
+  top: 200px;
+  right: -1em;
+  z-index: 1000;
+}
+
 .yam-link {
   text-align: center;
   transform: scale(1) rotate(0);

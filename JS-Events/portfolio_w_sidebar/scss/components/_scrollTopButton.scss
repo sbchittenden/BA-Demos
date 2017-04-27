@@ -5,6 +5,7 @@
   cursor: pointer;
   pointer-events: none;
   opacity: 0;
+  z-index: 900;
   transform: scale(0.8);
   transition: all 0.25s ease-out;
   &:hover {
