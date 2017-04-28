@@ -1644,7 +1644,7 @@ label[for="card-flip"] {
   position: absolute;
   right: -1em;
   background-color: #373B44;
-  transform: translateX(95%);
+  transform: translate(95%, 0);
   transition: transform 0.4s ease-in-out; }
   .yammy-sidebar:before {
     content: "";
@@ -1659,11 +1659,40 @@ label[for="card-flip"] {
     left: -3em;
     top: -0.1em; }
   .yammy-sidebar:hover {
-    transform: translateX(0); }
+    transform: translate(0, 0); }
   .yammy-sidebar img {
     width: 80%;
     height: auto;
     margin-top: 0.5em; }
+  @media screen and (max-width: 795px) {
+    .yammy-sidebar {
+      position: fixed;
+      top: 100%;
+      right: 98%;
+      transform: translate(95%, 0);
+      z-index: 2000; }
+      .yammy-sidebar:before {
+        border-left: solid 2px #ebebeb;
+        border-top: solid 2px #ebebeb;
+        border-right: solid 2px #ebebeb;
+        border-bottom: none;
+        border-radius: 0.3em 0.3em 0 0;
+        background-color: #373B44;
+        position: absolute;
+        left: -2px;
+        top: -48.5px; }
+      .yammy-sidebar:hover {
+        transform: translate(95%, -95%); } }
+
+.touch-hidden {
+  transform: translate(95%, 0); }
+  .touch-hidden:hover {
+    transform: translate(95%, 0); }
+
+.touch-expand {
+  transform: translate(95%, -95%); }
+  .touch-expand:hover {
+    transform: translate(95%, -95%); }
 
 .--is-stuck {
   position: fixed;

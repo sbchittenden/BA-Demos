@@ -10,7 +10,7 @@
   position: absolute;
   right: -1em;
   background-color: $section-color-1;
-  transform: translateX(95%);
+  transform: translate(95%, 0);
   transition: transform 0.4s ease-in-out;
   &:before {
     content: "";
@@ -26,12 +26,48 @@
     top: -0.1em;
   }
   &:hover {
-    transform: translateX(0);
+    transform: translate(0, 0);
   }
   & img {
     width: 80%;
     height: auto;
     margin-top: 0.5em;
+  }
+  @media screen and (max-width: 795px) {
+    position: fixed;
+    top: 100%;
+    right: 98%;
+    transform: translate(95%, 0);
+    z-index: 2000;
+    &:before {
+      border-left: solid 2px #ebebeb;
+      border-top: solid 2px #ebebeb;
+      border-right: solid 2px #ebebeb;
+      border-bottom: none;
+      border-radius: 0.3em 0.3em 0 0;
+      background-color: #373B44;
+      position: absolute;
+      left: -2px;
+      top: -48.5px;
+    }
+    &:hover {
+      transform: translate(95%, -95%);
+    }
+
+  }
+}
+
+.touch-hidden {
+  transform: translate(95%, 0);
+  &:hover {
+    transform: translate(95%, 0);
+  }
+}
+
+.touch-expand {
+  transform: translate(95%, -95%);
+  &:hover {
+    transform: translate(95%, -95%);
   }
 }
 
