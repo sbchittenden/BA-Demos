@@ -10,7 +10,7 @@ window.jsonValidator = (function() {
     var endsWithCurlyBrace = input.lastIndexOf('}') === input.length - 1;
     // console.log('ends with curly brace', endsWithCurlyBrace);
 
-    var stringPattern = /"\w*":\s*"\w*,?\s?\w*",?/;
+    var stringPattern = /"\w*":\s*"\w*,?(\s*\w*,?)*",?/;
     var booleanPattern = /"\w*":\s*(?:(?:true\b)|(?:false\b)),?/;
     var numberPattern = /"\w*":\s*\d+,?/;
     var arrayPattern = /"\w*"\s*:\s*\[.*\],?/;
