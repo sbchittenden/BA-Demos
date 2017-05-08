@@ -12,3 +12,6 @@ repo for public demos of BA projects
 
 ### Drag-and-drop Puzzle
 [Demo](https://sbchittenden.github.io/BA-Demos/JS-Events/puzzle/)
+
+### Portfolio with sticky-sidebar
+[Demo](https://sbchittenden.github.io/BA-Demos/JS-Events/portfolio_w_sidebar/)
