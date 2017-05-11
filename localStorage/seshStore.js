@@ -6,24 +6,24 @@ redBtn.addEventListener('click', changeColor);
 blueBtn.addEventListener('click', changeColor);
 
 
-if (sessionStorage.length <= 0) {
+if (localStorage.length <= 0) {
   populateStorage();
 } else {
   updateColor();
 }
 
 function populateStorage() {
-  sessionStorage.setItem('background', colorDisplay.style.backgroundColor);
+  localStorage.setItem('background', colorDisplay.style.backgroundColor);
   updateColor();
 }
 
 function updateColor() {
-  var color = sessionStorage.getItem('background');
+  var color = localStorage.getItem('background');
   colorDisplay.style.backgroundColor = color;
 }
 
 function changeColor(e) {
   var color = e.target.id;
-  sessionStorage.setItem('background', color);
+  localStorage.setItem('background', color);
   updateColor();
 }
