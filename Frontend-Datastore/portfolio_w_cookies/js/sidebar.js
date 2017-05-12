@@ -2,7 +2,7 @@
   var body = document.querySelector('body');
   var sidebar = document.querySelector('.yammy-sidebar');
 
-  window.addEventListener('scroll', throttleScroll(_checkSticky, 500), false);
+  window.addEventListener('scroll', throttleScroll(_checkSticky, 100), false);
   if (!window.matchMedia('(min-width: 796px)').matches) {
     sidebar.addEventListener('touchstart', sidebarControls, false);
     sidebar.classList.add('touch-hidden');
@@ -10,7 +10,7 @@
 
   function _checkSticky() {
     if (window.matchMedia('(min-width: 796px)').matches) {
-      var parentOffset = sidebar.offsetParent.offsetHeight;
+      var parentOffset = 761;
       if (parentOffset <= body.scrollTop) {
         console.log('start sticking');
         sidebar.classList.add('--is-stuck');
