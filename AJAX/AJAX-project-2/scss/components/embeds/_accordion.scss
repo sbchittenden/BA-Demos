@@ -1,0 +1,91 @@
+.accordion ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  & li {
+    position: relative;
+    &:first-of-type label {
+      border-radius: 3px 3px 0 0;
+    }
+    &:last-of-type label {
+      border-bottom: none;
+      border-radius: 0 0 3px 3px;
+    }
+  }
+}
+
+label[for^="accordion-section"] {
+  display: block;
+  padding: 1em;
+  background-color: rgb(254, 102, 123);
+  color: rgb(255, 255, 255);
+  border-bottom: solid 1px rgb(250, 250, 250);
+  cursor: pointer;
+  -webkit-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+  :hover {
+    background-color: rgb(146, 150, 171);
+  }
+  @media screen and (max-width: 1024px) {
+    background-color: #707070;
+    &:hover {
+      background-color: #8f8f8f;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    background-color: #16a085;
+    &:hover {
+      background-color: #1abc9c;
+    }
+  }
+  @media screen and (max-width: 360px) {
+    background-color: #19AAD1;
+    &:hover {
+      background-color: #4dc8ea;
+    }
+  }
+}
+
+.accordion-section-content {
+  padding: 0 1em;
+  height: 0;
+  background-color: rgb(250, 250, 250);
+  overflow-y: hidden;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+  @at-root .accordion ul li:last-of-type & {
+    border-radius: 0 0 3px 3px;
+  }
+}
+
+.accordion p {
+  line-height: 1.2;
+  color: rgb(72, 75, 93);
+  font-family: 'Montserrat';
+}
+
+.direction-chev {
+  position: absolute;
+  right: 1.5em;
+  transition: transform 1s;
+}
+
+%accordion-chevron-rotation {
+  transform: rotate(-180deg);
+}
+
+@for $i from 1 through 4 {
+  #accordion-section-#{$i}:checked + label[for$="-#{$i}"] > i {
+    @extend %accordion-chevron-rotation;
+  }
+}
+
+%accordion-section-expanded-height {
+  height: 200px;
+}
+
+@for $i from 1 through 4 {
+  #accordion-section-#{$i}:checked + label[for$="-#{$i}"] + .accordion-section-content {
+    @extend %accordion-section-expanded-height;
+  }
+}

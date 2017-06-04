@@ -1,0 +1,88 @@
+.yammy-sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  width: 10em;
+  padding: 1em;
+  border: solid 2px $main-font-color;
+  border-radius: 0 0.3em;
+  position: absolute;
+  right: -1em;
+  background-color: $section-color-1;
+  transform: translate(95%, 0);
+  transition: transform 0.4s ease-in-out;
+  &:before {
+    content: "";
+    width: 3em;
+    height: 3em;
+    border-left: solid 2px $main-font-color;
+    border-top: solid 2px $main-font-color;
+    border-bottom: solid 2px $main-font-color;
+    border-radius: 0.3em 0 0 0.3em;
+    background-color: $section-color-1;
+    position: absolute;
+    left: -3em;
+    top: -0.1em;
+  }
+  &:hover {
+    transform: translate(0, 0);
+  }
+  & img {
+    width: 80%;
+    height: auto;
+    margin-top: 0.5em;
+  }
+  @media screen and (max-width: 795px) {
+    position: fixed;
+    top: 100%;
+    right: 98%;
+    transform: translate(95%, 0);
+    z-index: 2000;
+    &:before {
+      border-left: solid 2px #ebebeb;
+      border-top: solid 2px #ebebeb;
+      border-right: solid 2px #ebebeb;
+      border-bottom: none;
+      border-radius: 0.3em 0.3em 0 0;
+      background-color: #373B44;
+      position: absolute;
+      left: -2px;
+      top: -48.5px;
+    }
+    &:hover {
+      transform: translate(95%, -95%);
+    }
+
+  }
+}
+
+.touch-hidden {
+  transform: translate(95%, 0);
+  &:hover {
+    transform: translate(95%, 0);
+  }
+}
+
+.touch-expand {
+  transform: translate(95%, -95%);
+  &:hover {
+    transform: translate(95%, -95%);
+  }
+}
+
+.--is-stuck {
+  position: fixed;
+  top: 200px;
+  right: -1em;
+  z-index: 1000;
+}
+
+.yam-link {
+  text-align: center;
+  transform: scale(1) rotate(0);
+  transition: transform 0.6s ease;
+  &:hover {
+    transform: scale(1.15) rotate(-5deg);
+  }
+}

@@ -1,0 +1,25 @@
+.toTop {
+  position: fixed;
+  right: 1em;
+  top: 93vh;
+  cursor: pointer;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 900;
+  transform: scale(0.8);
+  transition: all 0.25s ease-out;
+  &:hover {
+  	transform: scale(1);
+  	&:after {
+  		color: $highlight;
+  	}
+  }
+  &:after {
+  	content:'top';
+  	position: absolute;
+  	top: 100%;
+  	left: 50%;
+  	transform: translateX(-45%);
+  	transition: color 0.25s ease;
+  }
+}
