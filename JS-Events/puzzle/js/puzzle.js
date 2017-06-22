@@ -1,24 +1,25 @@
 (function() {
-  var body = document.querySelector('body');
-  var board = document.querySelector('.jp_puzzle-board');
-  var tray = document.querySelector('.jp_puzzle-tray');
-  var startBtn = document.querySelector('.jp_start-button');
-  var startModal = document.querySelector('.jp_initial-modal');
-  var hintBtn = document.querySelector('.jp_hint-button');
-  var resetBtn = document.querySelector('.jp_reset-button');
-  var tryAgainBtn = document.querySelector('.jp_try-again-button');
-  var timer = document.querySelector('.jp_puzzle-timer h1');
-  var timerMins = document.getElementById('t-minutes');
-  var timerSecs = document.getElementById('t-seconds');
-  var failModal = document.querySelector('.fail-modal');
-  var level = 4;
-  var hintsRemaining = 5;
-  var nope = new Audio('sfx/nope.wav');
-  var yep = new Audio('sfx/yep.wav');
-  var happySong = new Audio('sfx/celebrate.mp3');
-  var fail = new Audio('sfx/fail.wav');
-  var lastTen = new Audio('sfx/lastTen.wav');
-  var timerInterval;
+  'use strict';
+  // var body = document.querySelector('body');
+  const board = document.querySelector('.jp_puzzle-board');
+  const tray = document.querySelector('.jp_puzzle-tray');
+  const startBtn = document.querySelector('.jp_start-button');
+  const startModal = document.querySelector('.jp_initial-modal');
+  const hintBtn = document.querySelector('.jp_hint-button');
+  const resetBtn = document.querySelector('.jp_reset-button');
+  const tryAgainBtn = document.querySelector('.jp_try-again-button');
+  const timer = document.querySelector('.jp_puzzle-timer h1');
+  const timerMins = document.getElementById('t-minutes');
+  const timerSecs = document.getElementById('t-seconds');
+  const failModal = document.querySelector('.fail-modal');
+  const nope = new Audio('sfx/nope.wav');
+  const yep = new Audio('sfx/yep.wav');
+  const happySong = new Audio('sfx/celebrate.mp3');
+  const fail = new Audio('sfx/fail.wav');
+  const lastTen = new Audio('sfx/lastTen.wav');
+  let level = 4;
+  let hintsRemaining = 5;
+  let timerInterval;
 
   startModal.addEventListener('click', setDifficulty, false);
   startBtn.addEventListener('click', startPuzzle, false);
@@ -28,7 +29,7 @@
   tryAgainBtn.addEventListener('click', tryAgain, false);
 
   function startPuzzle() {
-    var numOfMins = parseInt(level);
+    let numOfMins = parseInt(level);
     timerMins.innerText = level;
     initiatePuzzle();
     hideModal();
@@ -62,25 +63,22 @@
   }
 
   function pieceDragStart(e) {
-    console.log(e);
     e.dataTransfer.setData('text', e.target.id);
     e.dataTransfer.effectAllowed = 'move';
   }
 
   function puzzleBoardDrop(e) {
     e.preventDefault();
-    console.log(e.target);
-    var data = e.dataTransfer.getData('text');
-    var dropzoneID = e.target.dataset.dropPosition;
+    let data = e.dataTransfer.getData('text');
+    let dropzoneID = e.target.dataset.dropPosition;
     if (dropzoneID === data) {
-      var droppedPiece = document.getElementById(data);
-      droppedPiece.style = '';
+      let droppedPiece = document.getElementById(data);
+      //droppedPiece.style = '';
+      droppedPiece.removeAttribute('style');
       droppedPiece.classList.add('placed');
       e.target.appendChild(droppedPiece);
       yep.play();
-      console.log(tray.children.length);
       if (tray.children.length === 0) {
-        console.log('solved');
         stopTimer();
         happySong.play();
         setTimeout(celebrate, 3000);
@@ -96,10 +94,9 @@
   }
 
   function scrambleBoard() {
-    var pieces = document.querySelectorAll('.jp_puzzle-piece');
-    var i;
-    for (i = 0; i < pieces.length; i++) {
-      var clone = pieces[i].cloneNode();
+    let pieces = document.querySelectorAll('.jp_puzzle-piece');
+    for (let i = 0; i < pieces.length; i++) {
+      let clone = pieces[i].cloneNode();
       clone.addEventListener('dragstart', pieceDragStart, false);
       clone.style.top = Math.round(Math.random() * 50) + '%';
       clone.style.left = Math.round(Math.random() * 720) + 10 + 'px';
@@ -132,15 +129,15 @@
   }
 
   function solvePuzzle() {
-    var piecesInTray = Array.prototype.slice.call(tray.querySelectorAll('.jp_puzzle-piece'));
-    var dropzones = Array.prototype.slice.call(document.querySelectorAll('.puzzle-piece-drop-zone'));
-    var sortedTray = piecesInTray.sort(function(a, b) {
+    let piecesInTray = Array.from(tray.querySelectorAll('.jp_puzzle-piece'));
+    let dropzones = Array.from(document.querySelectorAll('.puzzle-piece-drop-zone'));
+    let sortedTray = piecesInTray.sort(function(a, b) {
       return a.id - b.id;
     });
-    for (var i = 0; i < sortedTray.length; i++) {
-      for (var k = 0; k < dropzones.length; k++) {
+    for (let i = 0; i < sortedTray.length; i++) {
+      for (let k = 0; k < dropzones.length; k++) {
         if (sortedTray[i].id == dropzones[k].dataset.dropPosition) {
-          sortedTray[i].style = '';
+          sortedTray[i].removeAttribute('style');
           dropzones[k].appendChild(sortedTray[i]);
         }
       }
@@ -171,7 +168,6 @@
     var endTime = new Date(newMins);
     timerInterval = setInterval(function() {
       var time = countdown(endTime);
-      // console.log(time.minutes + ':' + time.seconds);
       timerMins.innerHTML = time.minutes;
       timerSecs.innerHTML = ('0' + time.seconds).slice(-2);
       if (time.total > 30000) {
@@ -189,7 +185,6 @@
       if (time.total <= 0) {
         clearInterval(timerInterval);
         if (tray.children.length > 0) {
-          console.log('FAIL!');
           failModal.classList.add('--is-active');
           failModal.parentElement.classList.add('--is-visible');
           fail.play();
@@ -202,9 +197,9 @@
   }
 
   function countdown(endTime) {
-    var total = Date.parse(endTime) - Date.parse(new Date());
-    var seconds = Math.floor((total / 1000) % 60);
-    var minutes = Math.floor((total / 1000 / 60) % 60);
+    let total = Date.parse(endTime) - Date.parse(new Date());
+    let seconds = Math.floor((total / 1000) % 60);
+    let minutes = Math.floor((total / 1000 / 60) % 60);
     return {
       'total': total,
       'minutes': minutes,
@@ -213,8 +208,7 @@
   }
 
   function celebrate() {
-    var celebrationPieces = Array.prototype.slice.call(document.querySelectorAll('.placed'));
-    // var celebrationPieces = Array.prototype.slice.call(document.querySelectorAll('.jp_puzzle-piece'));
+    let celebrationPieces = Array.from(document.querySelectorAll('.placed'));
     board.classList.add('--celebration');
     celebrationPieces.forEach(function(p, i) {
       setTimeout(function() {
@@ -228,7 +222,7 @@
   }
 
   function endTheParty() {
-    var celebrationPieces = Array.prototype.slice.call(document.querySelectorAll('.jp_puzzle-piece'));
+    let celebrationPieces = Array.from(document.querySelectorAll('.jp_puzzle-piece'));
     celebrationPieces.forEach(function(p) {
       if (p.classList.contains('--is-celebrating-x')) {
         p.classList.remove('--is-celebrating-x');
@@ -238,5 +232,4 @@
       }
     });
   }
-
 })();
