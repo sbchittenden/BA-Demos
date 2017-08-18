@@ -425,7 +425,8 @@ html {
 
 body {
   background-color: #373B44;
-  color: #ebebeb; }
+  color: #ebebeb;
+  overflow-x: hidden; }
 
 a {
   text-decoration: none; }
