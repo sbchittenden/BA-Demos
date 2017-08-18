@@ -1,0 +1,77 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Zilla', 'Open-Sans', sans-serif;
+  font-weight: 300;
+  color: white;
+  background-color: #212121;
+  display: flex;
+  justify-content: space-between; }
+
+.user-list {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1 1 60%; }
+
+.user-display {
+  flex: 1 1 40%;
+  border: solid 1px #333;
+  border-radius: 2px;
+  margin: 0.5em;
+  padding: 1em;
+  font-size: 1.1em; }
+  .user-display div {
+    margin-bottom: 0.5em; }
+
+.user {
+  width: 48%;
+  border: solid 1px #333;
+  border-radius: 2px;
+  padding: 1em;
+  margin: 0.5em 1%; }
+
+.name {
+  cursor: pointer;
+  font-size: 1.25em;
+  color: rgba(255, 255, 255, 0.65);
+  transition: all 0.5s ease; }
+  .name:hover {
+    color: white; }
+
+.email {
+  color: #972325;
+  margin: 0.3em 0;
+  transition: all 0.25s ease;
+  cursor: pointer; }
+  .email:hover {
+    color: #d03639; }
+
+.selected {
+  color: white; }
+
+.highlight {
+  background-color: #191919;
+  border: solid 1px #e52325;
+  transition: all 0.5s ease; }
+
+.info {
+  color: rgba(255, 255, 255, 0.4); }
+
+.clear-btn {
+  color: #595959;
+  border: solid 1px #333;
+  border-radius: 2px;
+  padding: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: all 0.25s ease; }
+  .clear-btn:hover {
+    color: #8c8c8c;
+    border: solid 1px #8c8c8c; }
+
+/*# sourceMappingURL=components.css.map */

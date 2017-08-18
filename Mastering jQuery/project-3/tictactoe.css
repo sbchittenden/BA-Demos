@@ -1,0 +1,139 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box; }
+
+body {
+  background-color: #653E5A;
+  color: #d2b6ca;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh; }
+
+.ttt_title {
+  font-weight: 100;
+  margin-top: 2em;
+  margin-bottom: 0; }
+
+.dis {
+  font-size: 0.5em; }
+
+.ttt_start-btn {
+  font-weight: 100;
+  text-align: center;
+  font-size: 1.3em;
+  color: #a26791;
+  border: solid 1px #a26791;
+  padding: 0.5em;
+  width: 50%;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all 0.3s ease; }
+  .ttt_start-btn:hover {
+    color: #fe4080;
+    border: solid 1px #fe4080; }
+  .ttt_start-btn.reset {
+    border: solid 1px #c9a6bf;
+    color: #c9a6bf; }
+    .ttt_start-btn.reset:hover {
+      color: #fe4080;
+      border: solid 1px #fe4080; }
+
+.ttt_game-board {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 367px;
+  margin: 0 auto; }
+
+.ttt_title {
+  text-align: center; }
+
+.ttt_game-table {
+  border-collapse: collapse;
+  border-spacing: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5em 0em; }
+
+.ttt_row {
+  border-bottom: solid 1px #a26791;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .ttt_row:last-of-type {
+    border-bottom: none; }
+  .ttt_row td {
+    padding: 1.1em;
+    height: 75px;
+    width: 75px;
+    border-right: solid 1px #a26791; }
+    .ttt_row td:last-of-type {
+      border-right: none; }
+    .ttt_row td > img {
+      width: 100%;
+      height: auto;
+      margin: 0;
+      pointer-events: none; }
+
+.ttt_piece {
+  display: none; }
+
+.__horiz {
+  height: 2px;
+  border-top: solid 3px #fe4080;
+  width: 65%;
+  position: absolute;
+  left: 18%;
+  transition: all 0.25s ease-in; }
+  .__horiz .__top {
+    top: 30%; }
+  .__horiz .__mid {
+    top: 50%; }
+  .__horiz .__bottom {
+    top: 69%; }
+
+.__vert {
+  height: 65%;
+  border-right: solid 3px #fe4080;
+  width: 2px;
+  position: absolute;
+  top: 18%;
+  transition: all 0.25s ease-in; }
+  .__vert .__left {
+    left: 30%; }
+  .__vert .__center {
+    left: 50%; }
+  .__vert .__right {
+    left: 69%; }
+
+.__diag__top-left {
+  height: 2px;
+  border-top: solid 3px #fe4080;
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: rotate(45deg);
+  transition: all 0.25s ease-in; }
+
+.__diag__top-right {
+  height: 2px;
+  border-top: solid 3px #fe4080;
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: rotate(-45deg);
+  transition: all 0.25s ease-in; }
+
+.__is-hidden {
+  transition: all 0s ease;
+  opacity: 0;
+  pointer-events: none; }
+
+/*# sourceMappingURL=tictactoe.css.map */
