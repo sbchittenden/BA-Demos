@@ -20,7 +20,7 @@
         triviaDisplay.innerHTML = 'Something went horribly wrong. Please try again!';
       }
     };
-    xhr.open('GET', `https://numbersapi.p.mashape.com/${number}/trivia?json`);
+    xhr.open('GET', `https://numbersapi.p.mashape.com/${number}/trivia?json=true&mashape-key=zFmAAxQF1WmshshXs6YdlJtfUoPSp154SOOjsnFLUn1g5TrPRn`);
     xhr.send();
   }
 
