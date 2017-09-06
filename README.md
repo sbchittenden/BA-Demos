@@ -20,7 +20,7 @@ repo for public demos of BA projects
 **[Demo](http://questionable-bit.surge.sh/)**
 
 ### Conway's Game of Life
-[Demo](difficult-bun.surge.sh)
+[Demo](http://difficult-bun.surge.sh/)
 
 ### Mastering jQuery
 [project-1 demo](https://sbchittenden.github.io/BA-Demos/Mastering%20jQuery/project-1/)
