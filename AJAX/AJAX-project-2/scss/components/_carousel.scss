@@ -1,0 +1,181 @@
+//------------------------------------------//
+//                CAROUSEL STYLES           //
+//------------------------------------------//
+.project-carousel__container {
+  width: 100%;
+  height: 25em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  & input[type="radio"] {
+    display: none;
+  }
+}
+
+.project-carousel__display-area {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-height: 100%;
+}
+
+.project-carousel__bullet-nav {
+  text-align: center;
+  width: 100%;
+  margin-top: 1em;
+  order: 2;
+  & label {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 1em;
+    border-radius: 50%;
+    background-color: $section-color-3;
+    transition: all 0.75s;
+    &:hover {
+      background-color: $highlight;
+      cursor: pointer;
+    }
+  }
+}
+
+.project-carousel__slide {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  visibility: hidden;
+  & picture {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    overflow-y: hidden;
+    flex: 25;
+  }
+  &.--text-display {
+    justify-content: flex-end;
+    flex-flow: column nowrap;
+  }
+  & img {
+    opacity: 0;
+    transition: all 0.75s;
+  }
+  @media screen and (max-width: 525px) {
+    overflow-y: hidden;
+  }
+}
+
+%carousel-nav-arrow {
+  display: block;
+  padding: 0.25em;
+  flex: 1;
+  z-index: 50;
+  cursor: pointer;
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+}
+
+.slide-nav__previous {
+  @extend %carousel-nav-arrow;
+  margin-right: 1em;
+}
+
+.slide-nav__next {
+  @extend %carousel-nav-arrow;
+  text-align: right;
+  margin-left: 1em;
+}
+
+// placeholder and loop for carousel slide visibility
+%carousel-slide-visibility {
+  visibility: visible;
+}
+
+@for $i from 1 through 10 {
+  @if $i < 6 {
+    $s: 1;
+    @while $s < 5 {
+      #p#{$i}-s#{$s}:checked ~ .project-carousel__display-area .project-carousel__slide:nth-of-type(#{$s}) {
+        @extend %carousel-slide-visibility;
+      }
+      $s: $s + 1;
+    }
+  }
+  @else {
+    $s: 1;
+    @while $s < 4 {
+      #p#{$i}-s#{$s}:checked ~ .project-carousel__display-area .project-carousel__slide:nth-of-type(#{$s}) {
+        @extend %carousel-slide-visibility;
+      }
+      $s: $s + 1;
+    }
+  }
+}
+
+// placeholder and loop for carousel slide opacity
+%carousel-slide-opacity {
+  opacity: 1;
+}
+
+@for $i from 1 through 10 {
+  @if $i < 6 {
+    $s: 1;
+    @while $s < 5 {
+      @if $s == 4 {
+        #p#{$i}-s#{$s}:checked ~ .project-carousel__display-area .project-carousel__slide:nth-of-type(#{$s}) .project-embed {
+          @extend %carousel-slide-opacity;
+        }
+        $s: $s + 1;
+      }
+      @else {
+        #p#{$i}-s#{$s}:checked ~ .project-carousel__display-area .project-carousel__slide:nth-of-type(#{$s}) img {
+          @extend %carousel-slide-opacity;
+        }
+        $s: $s + 1;
+      }
+    }
+  }
+  @else {
+    $s: 1;
+    @while $s < 4 {
+      #p#{$i}-s#{$s}:checked ~ .project-carousel__display-area .project-carousel__slide:nth-of-type(#{$s}) img {
+        @extend %carousel-slide-opacity;
+      }
+      $s: $s + 1;
+    }
+  }
+}
+
+// placeholder and loop for carousel bullet nav background color
+%bullet-nav-background-color {
+  background-color: $white;
+}
+
+@for $i from 1 through 10 {
+  @if $i < 6 {
+    $s: 1;
+    @while $s < 5 {
+      #p#{$i}-s#{$s}:checked ~ .project-carousel__bullet-nav > label[for="p#{$i}-s#{$s}"] {
+        @extend %bullet-nav-background-color;
+      }
+      $s: $s + 1;
+    }
+  }
+  @else {
+    $s: 1;
+    @while $s < 4 {
+      #p#{$i}-s#{$s}:checked ~ .project-carousel__bullet-nav > label[for="p#{$i}-s#{$s}"] {
+        @extend %bullet-nav-background-color;
+      }
+      $s: $s + 1;
+    }
+  }
+}

@@ -1,0 +1,167 @@
+$med_purple: #653E5A;
+$hot_pink: #fe4080;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $med_purple;
+  color: lighten($med_purple, 45%);
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.ttt_title {
+  font-weight: 100;
+  margin-top: 2em;
+  margin-bottom: 0;
+}
+
+.dis {
+  font-size: 0.5em;
+}
+
+.ttt_start-btn {
+  font-weight: 100;
+  text-align: center;
+  font-size: 1.3em;
+  color: lighten($med_purple, 20%);
+  border: solid 1px lighten($med_purple, 20%);
+  padding: 0.5em;
+  width: 50%;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    color: $hot_pink;
+    border: solid 1px $hot_pink;
+  }
+  &.reset {
+    border: solid 1px lighten($med_purple, 40%);
+    color: lighten($med_purple, 40%);
+    &:hover {
+      color: $hot_pink;
+      border: solid 1px $hot_pink;
+    }
+  }
+}
+
+.ttt_game-board {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 367px;
+  margin: 0 auto;
+}
+
+.ttt_title {
+  text-align: center;
+}
+
+.ttt_game-table {
+  border-collapse: collapse;
+  border-spacing: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5em 0em;
+}
+
+.ttt_row {
+  border-bottom: solid 1px lighten($med_purple, 20%);
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:last-of-type {
+    border-bottom: none;
+  }
+  td {
+    padding: 1.1em;
+    height: 75px;
+    width: 75px;
+    border-right: solid 1px lighten($med_purple, 20%);
+    &:last-of-type {
+      border-right: none;
+    }
+    & > img {
+      width: 100%;
+      height: auto;
+      margin: 0;
+      pointer-events: none;
+    }
+  }
+}
+
+.ttt_piece {
+  display: none;
+}
+
+.__horiz {
+  height: 2px;
+  border-top: solid 3px $hot_pink;
+  width: 65%;
+  position: absolute;
+  left: 18%;
+  transition: all 0.25s ease-in;
+  & .__top {
+    top: 30%;
+  }
+  & .__mid {
+    top: 50%;
+  }
+  & .__bottom {
+    top: 69%;
+  }
+}
+
+.__vert {
+  height: 65%;
+  border-right: solid 3px $hot_pink;
+  width: 2px;
+  position: absolute;
+  top: 18%;
+  transition: all 0.25s ease-in;
+  & .__left {
+    left: 30%;
+  }
+  & .__center {
+    left: 50%;
+  }
+  & .__right {
+    left: 69%;
+  }
+}
+
+.__diag__top-left {
+  height: 2px;
+  border-top: solid 3px $hot_pink;
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: rotate(45deg);
+  transition: all 0.25s ease-in;
+}
+
+.__diag__top-right {
+  height: 2px;
+  border-top: solid 3px $hot_pink;
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: rotate(-45deg);
+  transition: all 0.25s ease-in;
+}
+
+.__is-hidden {
+  transition: all 0s ease;
+  opacity: 0;
+  pointer-events: none;
+}

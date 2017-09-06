@@ -1,6 +1,7 @@
 (function() {
   var body = document.querySelector('body');
   var sidebar = document.querySelector('.yammy-sidebar');
+  var parent = sidebar.offsetParent;
 
   window.addEventListener('scroll', throttleScroll(_checkSticky, 500), false);
   if (!window.matchMedia('(min-width: 796px)').matches) {
@@ -10,7 +11,7 @@
 
   function _checkSticky() {
     if (window.matchMedia('(min-width: 796px)').matches) {
-      var parentOffset = sidebar.offsetParent.offsetHeight;
+      var parentOffset = parent.offsetHeight;
       if (parentOffset <= body.scrollTop) {
         console.log('start sticking');
         sidebar.classList.add('--is-stuck');

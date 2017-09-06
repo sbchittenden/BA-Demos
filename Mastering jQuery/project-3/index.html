@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tic Tac Toe</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,700" rel="stylesheet">
+  <link rel="stylesheet" href="tictactoe.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="ttt_wrapper">    
+  <h1 class="ttt_title">Play Against the Computer</h1>
+  <div class="ttt_game-board">
+    <table class="ttt_game-table">
+      <tbody>
+      <tr class="ttt_row">
+        <td data-square="a1"></td>
+        <td data-square="b1"></td>
+        <td data-square="c1"></td>
+      </tr>
+      <tr class="ttt_row">
+        <td data-square="a2"></td>
+        <td data-square="b2"></td>
+        <td data-square="c2"></td>
+      </tr>
+      <tr class="ttt_row">
+        <td data-square="a3"></td>
+        <td data-square="b3"></td>
+        <td data-square="c3"></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="ttt_win __horiz __is-hidden"></div>
+    <div class="ttt_win __vert __is-hidden"></div>
+    <div class="ttt_win __diag__top-left __is-hidden"></div>
+    <div class="ttt_win __diag__top-right __is-hidden"></div>
+  </div>
+  <div class="ttt_start-btn">Reset board</div>
+  </div>
+  <script src="tictactoe.js"></script>
+</body>
+</html>

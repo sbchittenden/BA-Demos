@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Signup Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+  <link rel="stylesheet" href="sign_up.css">
+</head>
+
+<body>
+  <!-- begin form -->
+  <div class="form-wrap">
+    <form action="" method="post" id="sign_up_form">
+      <div class="input-wrap">
+        <h1>Sign me up, Scotty!</h1>
+        <div>
+          <label for="first_name">First name:</label>
+          <input type="text" id="first_name" placeholder="James" required>
+          <span class="error"></span>
+        </div>
+        <div>
+          <label for="last_name">Last name:</label>
+          <input type="text" id="last_name" placeholder="Kirk" required>
+          <span class="error"></span>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="JTKirk@starfleet.com" required>
+          <span class="error"></span>
+        </div>
+        <div>
+          <label for="date_of_birth">Date of birth:</label>
+          <input type="text" id="date_of_birth" placeholder="MM-DD-YYYY" required>
+          <span class="error"></span>
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" placeholder="Please enter a unique password" required>
+          <span class="error"></span>
+        </div>
+        <div class="align-right">
+          <button type="submit" class="button" id="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="success_message"></div>
+  <script type="text/javascript" src="js/sign-up.js"></script>
+  <script>
+  </script>
+</body>
+
+</html>

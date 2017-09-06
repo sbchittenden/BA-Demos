@@ -1,0 +1,27 @@
+.number-fact__display {
+	text-align: center;
+	& h1 {
+		font-size: 5em;
+		margin-bottom: 0.2em;
+		color: $highlight;
+	}
+	& p {
+		font-size: 1.5em;
+		margin-top: 0;
+		text-align: center;
+	}
+}
+
+.number-button {
+	margin: 3em auto;
+	align-self: flex-end;
+	border: solid 1px $white;
+	padding: 1em 1.5em;
+	border-radius: 0.2em;
+	cursor: pointer;
+	transition: 0.25s all ease;
+	&:hover {
+		border: solid 1px $highlight;
+		color: $highlight;
+	}
+}
