@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Game of Life</title>
+  <link rel="stylesheet" href="css/app.min.css">
+</head>
+
+<body>
+  <canvas id="gameboard" width="0" height="0" class="--is-hidden"></canvas>
+  <div class="start-screen__wrapper">
+    <label for="board-dimension" class="spec-label">dimension of the gameboard <span class="sub-label">(max 500)</span></label>
+    <input type="text" id="board-dimension" class="game-specs" placeholder="500">
+    <label for="cell-size" class="spec-label">cell size <span class="sub-label">(max 5)</span></label>
+    <input type="text" id="cell-size" class="game-specs" placeholder="5">
+    <div class="init-btn">Seed a new board</div>
+  </div>
+    <div class="start-btn --is-hidden">Start</div>
+    <div class="end-btn --is-hidden">Stop</div>
+    <div class="reset-btn --is-hidden">Reset</div>
+  <script src="js/app.min.js"></script>
+</body>
+
+</html>
