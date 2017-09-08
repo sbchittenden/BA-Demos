@@ -1,0 +1,73 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightblue;
+  color: white;
+  font-family: Shrikhand;
+}
+
+.tabs-container {
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+}
+
+.tab-label {
+  border: solid 1px white;
+  border-bottom: solid 1px lightblue;
+  background-color: lightblue;
+  padding: 1em;
+  flex: 33%;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  margin-bottom: -1px;
+  cursor: pointer;
+}
+
+.tab-label:hover {
+  background-color: skyblue;
+}
+
+.is-current {
+  background-color: skyblue;
+}
+
+.tab-content-container {
+  position: relative;
+  flex: 100%;
+}
+
+.tab-content {
+  border: solid 1px white;
+  padding: 2em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 30vh;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(15%);
+  transition: opacity 0.35s ease, transform 0.5s ease;
+  z-index: -10;
+}
+
+.tab-content:nth-of-type(1) {
+  background-color: #71c5e7;
+}
+
+.tab-content:nth-of-type(2) {
+  background-color: #5bbce3;
+}
+
+.tab-content:nth-of-type(3) {
+  background-color: #30aadc;
+}
+
+.is-visible {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translatex(0);
+  z-index: 10;
+}
