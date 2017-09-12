@@ -1,0 +1,134 @@
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    min-height: 100vh;
+    background-color: rgb(22, 33, 50);
+    font-family: "Luckiest Guy", Helvetica, sans-serif;
+    color: rgb(153, 204, 255);
+}
+
+.policy__wrapper {
+    position: relative;
+    text-align: center;
+    width: 400px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    height: 100%;
+}
+
+.policy__image {
+    width: 100%;
+    height: auto;
+    flex: 1 0 50%;
+    border-bottom: solid 2px rgb(153, 204, 255);
+}
+
+.checkbox__wrapper {
+    position: relative;
+}
+
+.popup {
+    position: absolute;
+    bottom: 133px;
+    left: -55px;
+    color: hsl(8,39%,50%);
+    border: solid 2px hsl(8,39%,50%);
+    background-color: rgb(22, 33, 50);
+    padding: 1.2em 1em 1em 1em;
+    opacity: 0;
+    transform-origin: bottom center;
+}
+
+.popup:before {
+    content: "";
+    position: absolute;
+    bottom: -9px;
+    left: 125px;
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg);
+    background-color: rgb(22,33,50);
+    border-right: solid 2px hsl(8,39%,50%);
+    border-bottom: solid 2px hsl(8,39%,50%);
+}
+
+.--is-alerting {
+  animation: pop-up 0.3s forwards cubic-bezier(0.44, 0.26, 0, 1.79);
+}
+
+#accept_policy {
+    visibility: hidden;
+}
+
+#accept_policy:checked + label[for="accept_policy"]:after {
+    opacity: 1;
+}
+
+label[for="accept_policy"] {
+  cursor: pointer;
+}
+
+label[for="accept_policy"]:before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: -5px;
+    width: 25px;
+    height: 25px;
+    border: solid 2px rgb(153, 204, 255);
+}
+
+label[for="accept_policy"]:after {
+    content: "X";
+    font-size: 20px;
+    position: absolute;
+    left: -5px;
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    color: hsl(207, 79%, 57%);
+}
+
+.button {
+    border: solid 2px rgb(153, 204, 255);
+    width: 50%;
+    padding: 1em;
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.button > span {
+    padding-top: 5px;
+}
+
+.button:hover {
+    border: solid 2px hsl(207, 79%, 57%);
+    color: hsl(207, 79%, 57%);
+}
+
+.--is-hidden {
+    display: none;
+}
+
+@keyframes pop-up {
+  0% {
+    opacity:0;
+    transform: scale(0.2, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
