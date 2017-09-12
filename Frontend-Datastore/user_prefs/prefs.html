@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>User Preferences</title>
+  <link rel="stylesheet" href="prefs.css">
+</head>
+
+<body>
+  <h1>Howdy Stranger!</h1>
+  <div class="user-prefs__wrapper">
+    <label for="username">My Name is:</label>
+    <input type="text" id="username">
+    <label for="color">I like:</label>
+    <select name="color" id="color">
+      <option value="hotpink">Hot Pink</option>
+      <option value="chartreuse">Chartreuse</option>
+      <option value="cobalt">Cobalt</option>
+    </select>
+    <label for="mood">I'm feeling:</label>
+    <select name="mood" id="mood">
+      <option value="salty">Salty</option>
+      <option value="bored">Bored</option>
+      <option value="peppy">Peppy</option>
+    </select>
+    <div class="button"><span>Set preferences</span></div>
+  </div>
+  <script src="prefs.js"></script>
+</body>
+
+</html>
