@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css?family=Catamaran:100,400");
+*,
+*:before,
+*:after {
+  box-sizing: border-box; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: row wrap;
+  font-family: "Catamaran", Helvetica, sans-serif;
+  background-color: #5a5a5a;
+  color: #fff; }
+
+label {
+  text-transform: uppercase; }
+
+h1 {
+  text-align: center;
+  flex-basis: 100%; }
+
+.user-prefs__wrapper {
+  border: solid 1px #fff;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 2em; }
+
+.hotpink {
+  background-color: #db0a5b; }
+
+.chartreuse {
+  background-color: #bada55; }
+
+.cobalt {
+  background-color: #0047ab; }
+
+input {
+  border: solid 1px #fff;
+  width: 100%;
+  height: 2.1em;
+  padding: 0.5em;
+  font-size: 1em;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+  margin-bottom: 1em; }
+
+select {
+  height: 2.1em;
+  width: 100%;
+  outline: solid 1px #fff;
+  font-family: 'Catamaran';
+  font-size: 1em;
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+  margin-bottom: 1em; }
+
+.button {
+  border: solid 1px #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: row wrap;
+  text-transform: uppercase;
+  padding: 1em;
+  width: 100%;
+  margin-top: 2em;
+  cursor: pointer; }
+
+/*# sourceMappingURL=prefs.css.map */
