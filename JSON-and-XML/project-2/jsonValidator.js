@@ -11,7 +11,7 @@ window.jsonValidator = (function() {
     // console.log('ends with curly brace', endsWithCurlyBrace);
 
     var stringPattern = /"\w*":\s*"\w*,?(\s*\w*,?)*",?/;
-    var booleanPattern = /"\w*":\s*(?:(?:true\b)|(?:false\b)),?/;
+    var booleanPattern = /"\w*":\s*(?:(?:true\b)|(?:false\b)|(?:null\b)),?/;
     var numberPattern = /"\w*":\s*\d+,?/;
     var arrayPattern = /"\w*"\s*:\s*\[.*\],?/;
     var objectPattern = /"\w*"\s*:\s*\{.*\},?/;
