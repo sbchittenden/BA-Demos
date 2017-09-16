@@ -38,7 +38,8 @@ window.harvester = (function() {
   }
 
   function _getHref(item) {
-    var end = item.indexOf('">');
+    let pattern = /('|")>/;
+    let end = item.search(pattern);
     return item.substring(6, end);
   }
 
