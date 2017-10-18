@@ -29,3 +29,8 @@ repo for public demos of BA projects
 [project-1 demo](https://sbchittenden.github.io/BA-Demos/Mastering%20jQuery/project-1/)
 
 [project-3 demo](https://sbchittenden.github.io/BA-Demos/Mastering%20jQuery/project-3/)
+
+### Advanced jQuery
+[project-1 Album Viewer](https://sbchittenden.github.io/BA-Demos/Advanced_jQuery/project-1-album-viewer/)
+
+[project-2 Simple Forum](https://sbchittenden.github.io/BA-Demos/Advanced_jQuery/project-2-simple-forum/)
