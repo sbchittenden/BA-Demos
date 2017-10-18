@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Project 2 - Photo Album</title>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Lato" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <script src="handlebars-v4.0.10.js"></script>
+</head>
+
+<body>
+    <div id="album-wrapper"></div>
+    <div id="modal"></div>
+    <script id="album-template" type="text/x-handlebars-template">
+        <h1>My Favorite Placeholder Images</h1>
+        <ul class="album_list">
+            {{#each photos}}
+            <li>
+                <picture class="thumbnail" data-photo-id={{id}}>
+                    <source srcset="{{thumbnailUrl}}" media="(min-width: 600px)">
+                    <img src="{{thumbnailUrl}}" alt="photo">
+                </picture>
+                <h3>Album: {{albumTitle this.albumId}}</h3>
+<!--                 <h3>album id: {{albumId}}</h3>
+                <h4>photo id: {{id}}</h3> -->
+                <h5>{{title}}</h5>
+            </li>
+            {{/each}}
+        </ul>
+    </script>
+    <script id="modal-template" type="text/x-handlebars-template">
+      <picture class="full-size-img">
+        <source srcset="{{this.url}}" media="(min-width: 600px)">
+        <img src="{{this.url}}" alt="full sized photo">
+      </picture>
+      <h1 class="modal__pic-title">{{this.title}}</h1>
+    </script>
+    <script src="album_template.js"></script>
+</body>
+
+</html>
