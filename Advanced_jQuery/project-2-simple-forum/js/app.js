@@ -310,6 +310,6 @@ var currentUser = {
     $('.forum__comments-list').slideUp(300);
     targetPost.parent().find('.forum__post-body').slideToggle(300);
     targetPost.parent().toggleClass('--is-active');
-    $('body').animate({ scrollTop: targetPost.offset().top - $(window).height() * 0.4 }, 400);
+    $('html, body').animate({ scrollTop: targetPost.offset().top - $(window).height() * 0.4 }, 400);
   }
 })(jQuery, Handlebars, currentUser);
