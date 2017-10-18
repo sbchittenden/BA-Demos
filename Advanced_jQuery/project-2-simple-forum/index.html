@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Simple Forum</title>
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Lato:300,400,700|Zilla+Slab+Highlight:700" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.min.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <h1>in omnia paratus</h1>
+    </header>
+    <div class="forum-wrapper">
+        <aside class="left-sidebar">
+            <form id="new-post-form" action="">
+                <h2>Add a Post</h2>
+                <div class="form-group">
+                    <label class="form-label" for="new-post__title">Title:</label>
+                    <input id="new-post__title" type="text">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="new-post__body">Post:</label>
+                    <textarea name="new-post__body" id="new-post__body"></textarea>
+                </div>
+                <button type="submit" id="new-post__submit-btn">Submit Post</button>
+            </form>
+        </aside>
+        <section class="post-feed">
+            <div id="posts"></div>
+        </section>
+        <aside class="recent-posts-widget">
+            <h2>Recent Activity</h2>
+            <div id="recent-activity"></div>
+        </aside>
+    </div>
+    <!-- handlebars post template -->
+    <script id="posts-template" type="text/x-handlebars-template">
+        <ul class="forum__post-list">
+            {{#each posts}} {{> postItem}} {{/each}}
+        </ul>
+    </script>
+    <!-- post item partial -->
+    <script id="post-item-partial" type="text/x-handlebars-template">
+        <li class="forum__post-item">
+            <span class="close-icon">X</span>
+            <h1 class="forum__post-title" data-post-id={{id}}>{{title}}</h1>
+            <h3 class="forum__poster-name">posted by: {{userID userId}}</h3>
+            <p class="forum__post-body">{{body}}</p>
+            <div class="forum__comments">
+                <h4><a class="comments-toggle">Comments</a></h4> {{getComments id}}
+                <ul class="forum__comments-list">
+                    {{#each comments}}
+                    <li class="forum__comments-item">
+                        <p>{{body}}</p>
+                    </li>
+                    {{/each}}
+                    <li> 
+                        <h4>Have something to add?</h4>
+                        <input type="text" class="comment-submission">
+                        <button class="comment-submit">Post Comment</button>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </script>
+    <!-- new post from form -->
+    <script id="post-item-from-form" type="text/x-handlebars-template">
+        <li class="forum__post-item">
+            <span class="close-icon">X</span>
+            <h1 class="forum__post-title" data-post-id={{id}}>{{title}}</h1>
+            <h3 class="forum__poster-name">posted by: {{name}}</h3>
+            <p class="forum__post-body">{{body}}</p>
+            <div class="forum__comments">
+                <h4><a class="comments-toggle">Comments</a></h4>
+                <ul class="forum__comments-list">
+                    {{#each comments}}
+                    <li class="forum__comments-item">
+                        <p>{{body}}</p>
+                    </li>
+                    {{/each}}
+                    <li> 
+                        <h4>Have something to add?</h4>
+                        <input type="text" class="comment-submission">
+                        <button class="comment-submit">Post Comment</button>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </script>
+    <!-- recent activity sidebar template -->
+    <script id="recent-activity-template" type="text/x-handlebars-template">
+        {{#getRecent posts}}
+        <div class="recent-comment" data-post-id={{id}}>
+            <h4 class="recent-post__title">{{title}}</h4>
+            <p class="recent-comment__body">{{getComment comments "body"}}</p>
+            <p class="recent-comment__user-email">{{getComment comments "email"}}</p>
+            <p class="recent-comment__timestamp">commented <span class="timestamp" date="{{newDate}}"></span></p>
+        </div>
+        {{/getRecent}}
+    </script>
+    <!-- recent comment partial -->
+    <script id="recent-comment-partial" type="text/x-handlebars-template">
+        <div class="recent-comment" data-post-id={{id}}>
+            <h4 class="recent-post__title">{{postTitle}}</h4>
+            <p class="recent-comment__body">{{body}}</p>
+            <p class="recent-comment__user-email">{{email}}</p>
+            <p class="recent-comment__timestamp">commented <span class="timestamp" date="{{date}}"></span></p>
+        </div>
+    </script>
+    <!-- page dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Album Viewer</title>
+  <link rel="stylesheet" href="css/app.min.css">
+</head>
+<body>
+  <div class="album-grid"></div>
+  <div class="lightbox-modal"></div>
+
+  <!-- preloader -->
+  <div class="preloader">
+    <div class="circle"></div>
+  </div>
+<!-- END preloader -->
+
+<!-- album grid handlebars template -->
+  <script id="album-grid-template" type="text/x-handlebars-template">
+    <ul class="album-list">
+      {{#each albums}}
+      {{pageLimit}}
+      <li class="album" data-album-id={{id}}>
+
+      <img src="{{albumCover id}}" alt="album cover" class="album__cover-image">
+      <h1 class="album__title">{{title}}</h1>
+      <h3>User Id: {{id}}</h3>
+      <h5>Album Id: {{userId}}</h5>
+      </li>
+      {{/each}}
+    </ul>
+  </script>
+<!-- END album grid handlebars template -->
+<!-- lightbox modal template -->
+<script id="photo-gallery-template" type="text/x-handlebars-template">
+  <div class="close-lightbox"><span>X</span></div>
+<div class="current-image">
+  <img src="" alt="">
+  <p></p>
+</div>
+<ul class="photo-gallery__list">
+  {{#each photos}}
+  <li class="photo-gallery__thumb">
+    <img src="{{thumbnailUrl}}" alt="" data-large-image-url={{url}} data-title="{{title}}">
+  </li>
+  {{/each}}
+</ul>
+</script>
+<!-- END lightbox modal template -->
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
