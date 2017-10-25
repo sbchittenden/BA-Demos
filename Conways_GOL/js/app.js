@@ -174,8 +174,8 @@ var Cell = function Cell(x, y, alive) {
   resetBtn.addEventListener('click', resetGame);
 
   function initializeNewGame() {
-    var d = parseInt(boardDim.value);
-    var c = parseInt(cellSize.value);
+    var d = parseInt(boardDim.value) || 500;
+    var c = parseInt(cellSize.value) || 5;
 
     startScreen.classList.add('--is-hidden');
     startBtn.classList.remove('--is-hidden');
