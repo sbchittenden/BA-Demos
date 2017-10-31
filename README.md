@@ -36,3 +36,9 @@ repo for public demos of BA projects
 [project-2 Simple Forum](https://sbchittenden.github.io/BA-Demos/Advanced_jQuery/project-2-simple-forum/)
 
 [project-3 Calendar](https://sbchittenden.github.io/BA-Demos/Advanced_jQuery/project-3-calendar/)
+
+*project-3 test code (run from console):**
+
+```javascript
+layOutDay([{ start: 30, end: 90 }, {start: 45, end: 150}, {start: 350, end: 515},{start: 425, end: 540},{start: 50, end: 125}, { start: 540, end: 600 }, { start: 560, end: 620 }, { start: 610, end: 670 }, {start: 160, end: 345}]);
+```
