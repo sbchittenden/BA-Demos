@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Calendar</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.min.css">
+</head>
+
+<body>
+  <div id="calendar__wrapper">
+    <div id="cal__timeline">
+      <ul class="timeline__list">
+        <li class="timeline__time">9:00</li>
+        <li class="timeline__time">9:30</li>
+        <li class="timeline__time">10:00</li>
+        <li class="timeline__time">10:30</li>
+        <li class="timeline__time">11:00</li>
+        <li class="timeline__time">11:30</li>
+        <li class="timeline__time">12:00</li>
+        <li class="timeline__time">12:30</li>
+        <li class="timeline__time">1:00</li>
+        <li class="timeline__time">1:30</li>
+        <li class="timeline__time">2:00</li>
+        <li class="timeline__time">2:30</li>
+        <li class="timeline__time">3:00</li>
+        <li class="timeline__time">3:30</li>
+        <li class="timeline__time">4:00</li>
+        <li class="timeline__time">4:30</li>
+        <li class="timeline__time">5:00</li>
+        <li class="timeline__time">5:30</li>
+        <li class="timeline__time">6:00</li>
+        <li class="timeline__time">6:30</li>
+        <li class="timeline__time">7:00</li>
+        <li class="timeline__time">7:30</li>
+        <li class="timeline__time">8:00</li>
+        <li class="timeline__time">8:30</li>
+        <li class="timeline__time">9:00</li>
+      </ul>
+    </div>
+    <div id="cal__event-container">
+      <div class="cal__event">
+        <h1 class="cal__event--title">Sample Item</h1>
+        <p class="cal__event--location">Sample location</p>
+      </div>
+    </div>
+  </div>
+  <!-- event template -->
+  <script id="event-template" type="text/x-handlebars-template">
+    {{#each events}}
+    {{setEvent events}}
+    <div class="cal__event" style="height:{{height}};top:{{top}};left:{{left}};width:{{width}}">
+      <h1 class="cal__event--title">Sample Item</h1>
+      <p class="cal__event--location">Sample location</p>
+      <span>{{start}}</span>
+      <span>{{end}}</span>
+    </div>
+    {{/each}}
+  </script>
+  <!-- page dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
