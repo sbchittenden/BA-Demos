@@ -425,7 +425,8 @@ html {
 
 body {
   background-color: #373B44;
-  color: #ebebeb; }
+  color: #ebebeb;
+  overflow-x: hidden; }
 
 a {
   text-decoration: none; }
@@ -1646,6 +1647,7 @@ label[for="card-flip"] {
   border-radius: 0 0.3em;
   position: absolute;
   right: -1em;
+  top: 0;
   background-color: #373B44;
   transform: translate(95%, 0);
   transition: transform 0.4s ease-in-out; }
