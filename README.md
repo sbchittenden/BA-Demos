@@ -14,7 +14,7 @@ repo for public demos of BA projects
 [Demo](https://sbchittenden.github.io/BA-Demos/JS-Events/puzzle/)
 
 ### Portfolio with sticky-sidebar
-[Demo](https://sbchittenden.github.io/BA-Demos/JS-Events/portfolio_w_sidebar/)
+[Demo](https://sbchittenden.github.io/BA-Demos/AJAX/AJAX-project-2/index.html)
 
 ### Portfolio w/ Numbersapi
 [Demo](https://sbchittenden.github.io/BA-Demos/AJAX/AJAX-project-2/index.html)
