@@ -23,7 +23,7 @@ repo for public demos of BA projects
 [Demo](https://sbchittenden.github.io/BA-Demos/Handlebars/photo-album/)
 
 ### Conway's Game of Life
-[Demo](http://difficult-bun.surge.sh/)
+[Demo](http://sbc-gol.surge.sh/)
 
 ### Mastering jQuery
 [project-1 demo](https://sbchittenden.github.io/BA-Demos/Mastering%20jQuery/project-1/)
