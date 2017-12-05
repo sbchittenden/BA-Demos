@@ -17,7 +17,7 @@ repo for public demos of BA projects
 [Demo](https://sbchittenden.github.io/BA-Demos/JS-Events/portfolio_w_sidebar/)
 
 ### Portfolio w/ Numbersapi
-[Demo](http://questionable-bit.surge.sh/)
+[Demo](https://sbchittenden.github.io/BA-Demos/AJAX/AJAX-project-2/index.html)
 
 ### Handlebars templated photo album
 [Demo](https://sbchittenden.github.io/BA-Demos/Handlebars/photo-album/)
