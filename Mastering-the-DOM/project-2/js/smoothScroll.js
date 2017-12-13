@@ -11,7 +11,7 @@ toTopBtn.addEventListener('click', toTop, false);
 window.addEventListener('scroll', checkTop, false);
 
 function checkTop() {
-  if (bodyEl.scrollTop > 5) {
+  if (bodyEl.parentElement.scrollTop > 5) {
     toTopBtn.style.pointerEvents = 'auto';
     toTopBtn.style.opacity = 1;
   } else {
@@ -35,8 +35,9 @@ function smoothScroll(e) {
     var offset;
     if (scrollTarget) {
     offset = Math.round(scrollTarget.offsetTop - mainNav.offsetHeight * 0.6);
+    console.log('offset in smoothScroll: ', offset);
     }
-    if (offset - bodyEl.scrollTop > 5) {
+    if (offset - bodyEl.parentElement.scrollTop > 5) {
       scrollDown(offset);
     } else {
       scrollUp(offset);
@@ -45,21 +46,22 @@ function smoothScroll(e) {
 }
 
 function scrollDown(offset) {
-  scrollInterval = setInterval(function() {
-    var diff = Math.round(offset - bodyEl.scrollTop);
-    bodyEl.scrollTop += 10;
-    if (diff <= 5) {
+
+    scrollInterval = setInterval(() => {
+      bodyEl.parentElement.scrollTop += 10;
+      if (offset - bodyEl.parentElement.scrollTop <= 5) {
+        console.log('interval cleared!');
+        clearInterval(scrollInterval);
+      }
+    }, 1);
+}
+
+function scrollUp(offset) {
+  scrollInterval = setInterval(() => {
+    bodyEl.parentElement.scrollTop -= 10;
+    if (offset - bodyEl.parentElement.scrollTop >= 5) {
       clearInterval(scrollInterval);
     }
   }, 1);
 }
 
-function scrollUp(offset) {
-  scrollInterval = setInterval(function() {
-    var diff = Math.round(bodyEl.scrollTop - offset);
-    bodyEl.scrollTop -= 10;
-    if (diff <= 5) {
-      clearInterval(scrollInterval);
-    }
-  }, 1);
-}
