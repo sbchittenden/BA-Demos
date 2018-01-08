@@ -1,0 +1,270 @@
+{
+  "courses": [
+    {
+      "title": "Communicating Effectively for Success",
+      "courseId": 100,
+      "chapters": [
+        {
+          "title": "Getting Started and Assessment",
+          "chapterId": 101
+        }
+      ]
+    },
+    {
+      "title": "Command Line for Web Developers, Git and GitHub",
+      "courseId": 200,
+      "chapters": [
+        {
+          "title": "Markdown in Depth",
+          "chapterId": 201
+        },
+        {
+          "title": "Command Line for Developers",
+          "chapterId": 202
+        },
+        {
+          "title": "Mastering Git, Part 1",
+          "chapterId": 203
+        },
+        {
+          "title": "Mastering GitHub",
+          "chapterId": 204
+        },
+        {
+          "title": "Command Line for Developers, Part 2",
+          "chapterId": 205
+        }
+      ]
+    },
+    {
+      "title": "Mastering the IDE",
+      "courseId": 300,
+      "chapters": [
+        {
+          "title": "Your Most Important Tool",
+          "chapterId": 301
+        },
+        {
+          "title": "Downloading and Installing Sublime Text",
+          "chapterId": 302
+        },
+        {
+          "title": "User Interface in Depth",
+          "chapterId": 303
+        },
+        {
+          "title": "Sublime Text from the Ground Up",
+          "chapterId": 304
+        },
+        {
+          "title": "Sublime Text Settings and Customizations",
+          "chapterId": 305
+        },
+        {
+          "title": "Managing and Navigating Files",
+          "chapterId": 306
+        }
+      ]
+    },
+    {
+      "title": "Intro to Javascript and UI Development",
+      "courseId": 400,
+      "chapters": [
+        {
+          "title": "Intro to HTML",
+          "chapterId": 401
+        },
+        {
+          "title": "Intro to CSS",
+          "chapterId": 402
+        },
+        {
+          "title": "Getting Started with Javascript",
+          "chapterId": 403
+        },
+        {
+          "title": "Intro to Javascript Core",
+          "chapterId": 404
+        },
+        {
+          "title": "Intro to the DOM",
+          "chapterId": 405
+        }
+      ]
+    },
+    {
+      "title": "Mastering Javascript and Modern Web Development",
+      "courseId": 500,
+      "chapters": [
+        {
+          "title": "Architecture of the Internet",
+          "chapterId": 501
+        },
+        {
+          "title": "Style Guide Driven Development",
+          "chapterId": 502
+        },
+        {
+          "title": "Mastering HTML",
+          "chapterId": 503
+        },
+        {
+          "title": "Mastering CSS",
+          "chapterId": 504
+        },
+        {
+          "title": "Intro to Responsive Design",
+          "chapterId": 505
+        },
+        {
+          "title": "Chrome DevTools",
+          "chapterId": 506
+        },
+        {
+          "title": "ARIA",
+          "chapterId": 507
+        },
+        {
+          "title": "SASS",
+          "chapterId": 508
+        },
+        {
+          "title": "CSS Best Practices",
+          "chapterId": 509
+        },
+        {
+          "title": "UI Frameworks",
+          "chapterId": 510
+        }
+      ]
+    },
+    {
+      "title": "Becoming a Javascript Expert",
+      "courseId": 600,
+      "chapters": [
+        {
+          "title": "JSON and XML",
+          "chapterId": 601
+        },
+        {
+          "title": "RegEx in Depth",
+          "chapterId": 602
+        },
+        {
+          "title": "Mastering the DOM",
+          "chapterId": 603
+        },
+        {
+          "title": "Javascript Events in Depth",
+          "chapterId": 604
+        },
+        {
+          "title": "Strict Mode",
+          "chapterId": 605
+        },
+        {
+          "title": "Handling Errors in Javascript",
+          "chapterId": 606
+        },
+        {
+          "title": "AJAX in Depth",
+          "chapterId": 607
+        },
+        {
+          "title": "Frontend Datastore",
+          "chapterId": 608
+        },
+        {
+          "title": "ECMAScript 2015",
+          "chapterId": 609
+        },
+        {
+          "title": "Using Custom Events in Javascript",
+          "chapterId": 610
+        },
+        {
+          "title": "Optimizing the Performance of JS Web Apps",
+          "chapterId": 611
+        },
+        {
+          "title": "Object-Oriented Programming in Javascript, Part 1",
+          "chapterId": 612
+        },
+        {
+          "title": "Object-Oriented Programming in Javascript, Part 2",
+          "chapterId": 613
+        }
+      ]
+    },
+    {
+      "title": "Art of Modern Frontend Development",
+      "courseId": 700,
+      "chapters": [
+        {
+          "title": "Frontend Tooling",
+          "chapterId": 701
+        },
+        {
+          "title": "Mastering jQuery",
+          "chapterId": 702
+        },
+        {
+          "title": "JS Templating - Handlebars",
+          "chapterId": 703
+        },
+        {
+          "title": "Advanced jQuery",
+          "chapterId": 704
+        },
+        {
+          "title": "Into to Webpack and ES6 Modules",
+          "chapterId": 705
+        }
+      ]
+    },
+    {
+      "title": "Art of Programming",
+      "courseId": 800,
+      "chapters": [
+        {
+          "title": "Intro to Problem Solving",
+          "chapterId": 801
+        },
+        {
+          "title": "Intro to Design Patterns",
+          "chapterId": 802
+        },
+        {
+          "title": "Calculating the Performance of Algorithms",
+          "chapterId": 803
+        },
+        {
+          "title": "Recursion",
+          "chapterId": 804
+        }
+      ]
+    },
+    {
+      "title": "Architecting Frontend Web Applications",
+      "courseId": 900,
+      "chapters": [
+        {
+          "title": "Architecting an Application",
+          "chapterId": 901
+        },
+        {
+          "title": "Maintaining Data Integrity",
+          "chapterId": 902
+        },
+        {
+          "title": "Enumeration Attributes",
+          "chapterId": 903
+        },
+        {
+          "title": "Managing Associations between Object Types",
+          "chapterId": 904
+        }
+      ]
+    }
+  ]
+}
